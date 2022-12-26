@@ -1,6 +1,6 @@
 package com.balanici.catalogservice.web;
 
-import com.balanici.catalogservice.BookService;
+import com.balanici.catalogservice.service.BookService;
 import com.balanici.catalogservice.domain.Book;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -35,7 +35,7 @@ public class BookController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Book addBookToCatalog(Book book) {
+    public Book addBookToCatalog(@RequestBody Book book) {
         return bookService.addBookToCatalog(book);
     }
 

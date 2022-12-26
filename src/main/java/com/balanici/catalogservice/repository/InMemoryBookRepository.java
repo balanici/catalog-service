@@ -1,4 +1,4 @@
-package com.balanici.catalogservice;
+package com.balanici.catalogservice.repository;
 
 import com.balanici.catalogservice.domain.Book;
 import java.util.Map;

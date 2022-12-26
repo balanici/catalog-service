@@ -1,4 +1,4 @@
-package com.balanici.catalogservice;
+package com.balanici.catalogservice.exception;
 
 public class BookNotFoundException extends RuntimeException {
 

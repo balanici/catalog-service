@@ -1,6 +1,9 @@
-package com.balanici.catalogservice;
+package com.balanici.catalogservice.service;
 
+import com.balanici.catalogservice.exception.BookAlreadyExistsException;
+import com.balanici.catalogservice.exception.BookNotFoundException;
 import com.balanici.catalogservice.domain.Book;
+import com.balanici.catalogservice.repository.BookRepository;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -36,7 +39,7 @@ public class BookService {
         return bookRepository.findByIsbn(isbn)
             .map(existingBook ->
                 bookRepository.save(
-                    new Book(existingBook.isbn(), existingBook.title(), existingBook.author(), existingBook.price())
+                    new Book(existingBook.isbn(), book.title(), book.author(), book.price())
                 )
             )
             .orElseGet(() -> addBookToCatalog(book));
