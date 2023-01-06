@@ -38,6 +38,7 @@ class BookJsonTests {
 
         assertThat(jacksonTester.parse(content))
             .usingRecursiveComparison()
+            .ignoringFields("createdDate", "lastModifiedDate")
             .isEqualTo(Book.of("1234567890", "Title", "Author", 9.90));
     }
 

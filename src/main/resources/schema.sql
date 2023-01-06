@@ -1,10 +1,12 @@
 DROP TABLE IF EXISTS book;
 CREATE TABLE book
 (
-    id      BIGSERIAL PRIMARY KEY NOT NULL,
-    author  VARCHAR(255)          NOT NULL,
-    isbn    VARCHAR(255) UNIQUE   NOT NULL,
-    price   FLOAT8                NOT NULL,
-    title   VARCHAR(255)          NOT NULL,
-    version INTEGER               NOT NULL
+    id                  BIGSERIAL PRIMARY KEY NOT NULL,
+    create_date         TIMESTAMP NOT NULL,
+    last_modified__date TIMESTAMP NOT NULL,
+    author              VARCHAR(255)          NOT NULL,
+    isbn                VARCHAR(255) UNIQUE   NOT NULL,
+    price               FLOAT8                NOT NULL,
+    title               VARCHAR(255)          NOT NULL,
+    version             INTEGER               NOT NULL
 );
