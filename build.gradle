@@ -37,6 +37,7 @@ dependencies {
     implementation 'org.springframework.cloud:spring-cloud-starter-config'
     implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
     implementation 'org.springframework.retry:spring-retry'
+    implementation 'org.flywaydb:flyway-core'
     compileOnly 'org.projectlombok:lombok:1.18.24'
     developmentOnly 'org.springframework.boot:spring-boot-devtools:3.0.1'
     runtimeOnly 'org.postgresql:postgresql'

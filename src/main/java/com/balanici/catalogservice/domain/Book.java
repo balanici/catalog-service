@@ -13,6 +13,7 @@ import org.springframework.data.annotation.Version;
 public record Book(
     @Id
     Long id,
+    String publisher,
     @CreatedDate
     Instant createdDate,
     @LastModifiedDate
@@ -33,7 +34,7 @@ public record Book(
     int version
 ) {
 
-    public static Book of(String isbn, String title, String author, Double price) {
-        return new Book(null, Instant.now(), Instant.now(), isbn, title, author, price, 0);
+    public static Book of(String publisher, String isbn, String title, String author, Double price) {
+        return new Book(null, publisher, Instant.now(), Instant.now(), isbn, title, author, price, 0);
     }
 }
