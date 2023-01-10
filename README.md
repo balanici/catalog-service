@@ -25,8 +25,10 @@ remove containers:
 ```shell
 docker rm -f catalog-service polar-postgres
 ```
-
-
+build and publish image
+```shell
+./gradlew bootBuildImage --imageName=ghcr.io/balanici/catalog-service --publishImage -PregistryUrl=ghcr.io -PregistryUsername=<your_github_username> -PregistryToken=<your_github_token>
+```
 
 ### Reference Documentation
 
