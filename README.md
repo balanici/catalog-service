@@ -1,5 +1,33 @@
 # Getting Started
 
+prepare docker network
+```shell
+docker network create catalog-network
+```
+
+build jar
+```shell
+./gradlew bootJar
+```
+build docker image
+```shell
+docker build -t catalog-service .
+```
+prepare docker DB container
+```shell
+$ docker run -d --name polar-postgres --net catalog-network -e POSTGRES_USER=user -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=polardb_catalog -p 5432:5432 postgres:14.4
+```
+run container catalog-service in catalog-network
+```shell
+$ docker run -d --name catalog-service --net catalog-network -p 9001:9001 -e SPRING_DATASOURCE_URL=jdbc:postgresql://polar-postgres:5432/polardb_catalog -e SPRING_PROFILES_ACTIVE=testdata catalog-service
+```
+remove containers:
+```shell
+docker rm -f catalog-service polar-postgres
+```
+
+
+
 ### Reference Documentation
 
 For further reference, please consider the following sections:
