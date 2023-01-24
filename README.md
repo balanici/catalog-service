@@ -30,6 +30,14 @@ build and publish image
 ./gradlew bootBuildImage --imageName=ghcr.io/balanici/catalog-service --publishImage -PregistryUrl=ghcr.io -PregistryUsername=<your_github_username> -PregistryToken=<your_github_token>
 ```
 
+Commands used during learn:
+```shell
+minikube start --profile polar
+minikube image load catalog-service --profile polar    load image from local into minikube
+kubectl apply -f k8s/deployment.yml
+
+```
+
 ### Reference Documentation
 
 For further reference, please consider the following sections:
