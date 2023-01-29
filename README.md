@@ -36,6 +36,11 @@ minikube start --profile polar
 minikube image load catalog-service --profile polar    load image from local into minikube
 kubectl apply -f k8s/deployment.yml
 
+kubectl apply -f k8s/service.yml
+kubectl get svc -l app=catalog-service
+kubectl port-forward service/catalog-service 9001:80
+
+
 ```
 
 ### Reference Documentation

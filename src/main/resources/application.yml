@@ -24,6 +24,8 @@ spring:
     hikari:
       connection-timeout: 2000
       maximum-pool-size: 5
+  lifecycle:
+    timeout-per-shutdown-phase: 15s
 server:
   port: 9001
   tomcat:
@@ -32,6 +34,7 @@ server:
     threads:
       max: 200
       min-spare: 10
+  shutdown: graceful
 
 management:
   endpoints:
