@@ -40,6 +40,10 @@ kubectl apply -f k8s/service.yml
 kubectl get svc -l app=catalog-service
 kubectl port-forward service/catalog-service 9001:80
 
+# from root dir
+tilt up    #to up with tilt
+tilt down
+
 
 ```
 
