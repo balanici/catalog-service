@@ -48,6 +48,8 @@ tilt down
 #when deployment is running with tilt you can see it with octant 
 octant  # will open octant dashboard localhost:7777
 
+# evaluate k8s manifests
+kubeval --strict -d k8s
 
 
 ```
