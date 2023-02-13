@@ -45,6 +45,11 @@ tilt up    #to up with tilt
 tilt down
 
 
+#when deployment is running with tilt you can see it with octant 
+octant  # will open octant dashboard localhost:7777
+
+
+
 ```
 
 ### Reference Documentation
